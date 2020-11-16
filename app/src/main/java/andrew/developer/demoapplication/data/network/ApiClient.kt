@@ -5,7 +5,7 @@ import andrew.developer.demoapplication.data.entities.AlbumsItem
 import retrofit2.Response
 import retrofit2.http.*
 
-interface AlbumsAPI {
+interface ApiClient {
 
     @GET("/albums")
     suspend fun getAlbums(): Response<Albums>

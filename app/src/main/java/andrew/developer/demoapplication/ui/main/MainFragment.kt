@@ -2,6 +2,8 @@ package andrew.developer.demoapplication.ui.main
 
 import andrew.developer.demoapplication.App
 import andrew.developer.demoapplication.R
+import andrew.developer.demoapplication.adapters.AlbumsAdapter
+import andrew.developer.demoapplication.data.entity.AlbumsItem
 import andrew.developer.demoapplication.ui.main.di.MainComponent
 import andrew.developer.demoapplication.utils.observe
 import android.os.Bundle
@@ -11,8 +13,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.main_fragment.*
+import java.util.*
 import javax.inject.Inject
 
 class MainFragment : Fragment() {
@@ -20,6 +25,8 @@ class MainFragment : Fragment() {
     companion object {
         fun newInstance() = MainFragment()
     }
+
+    private val adapter = AlbumsAdapter()
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -39,6 +46,7 @@ class MainFragment : Fragment() {
     ): View = inflater.inflate(R.layout.main_fragment, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        setupAdapter()
         srlRefresh.setColorSchemeResources(R.color.purple_700)
         srlRefresh.setOnRefreshListener { viewModel.onRefresh() }
 
@@ -51,8 +59,13 @@ class MainFragment : Fragment() {
                 .show()
         }
 
-        tvId.text = "1"
-        tvTitle.text = "2"
-        tvUserId.text = "3"
+        observe(viewModel.data) {
+            adapter.setList(it)
+        }
+    }
+
+    private fun setupAdapter(){
+        rv_albums.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        rv_albums.adapter = adapter
     }
 }

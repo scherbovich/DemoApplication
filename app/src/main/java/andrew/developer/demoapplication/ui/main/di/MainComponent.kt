@@ -8,7 +8,7 @@ import dagger.Component
 @FragmentScope
 @Component(
     dependencies = [AppComponent::class],
-    modules = [MainViewModelModule::class]
+    modules = [MainViewModelModule::class, MainModule::class]
 )
 interface MainComponent {
     fun inject(mainFragment: MainFragment)

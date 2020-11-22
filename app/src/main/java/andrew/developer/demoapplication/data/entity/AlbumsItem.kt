@@ -1,4 +1,4 @@
-package andrew.developer.demoapplication.data.entities
+package andrew.developer.demoapplication.data.entity
 
 import com.google.gson.annotations.SerializedName
 

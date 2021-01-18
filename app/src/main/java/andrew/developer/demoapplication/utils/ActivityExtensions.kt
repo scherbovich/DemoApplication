@@ -1,6 +1,5 @@
 package andrew.developer.demoapplication.utils
 
-import android.view.inputmethod.InputMethodSession
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData

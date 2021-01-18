@@ -1,6 +1,5 @@
 package andrew.developer.demoapplication.api
 
-import andrew.developer.demoapplication.data.entity.Albums
 import andrew.developer.demoapplication.data.entity.AlbumsItem
 import retrofit2.Response
 import retrofit2.http.*
@@ -11,7 +10,7 @@ interface Api {
     suspend fun getAlbums(): ArrayList<AlbumsItem>
 
     @GET("/albums")
-    suspend fun getSortedAlbums(@Query("userId") userId: Int): Response<Albums>
+    suspend fun getSortedAlbums(@Query("userId") userId: Int): ArrayList<AlbumsItem>
 
     @GET("/albums/{id}")
     suspend fun getAlbum(@Path(value = "id") albumId: Int): AlbumsItem

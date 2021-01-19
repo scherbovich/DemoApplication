@@ -4,7 +4,6 @@ import andrew.developer.demoapplication.api.Api
 import andrew.developer.demoapplication.data.RepositoryImpl
 import andrew.developer.demoapplication.data.entity.AlbumsItem
 import andrew.developer.demoapplication.storage.dao.AlbumDao
-import andrew.developer.demoapplication.ui.main.domain.MainRepository
 import javax.inject.Inject
 
 class MainRepositoryImpl @Inject constructor(
@@ -19,7 +18,7 @@ class MainRepositoryImpl @Inject constructor(
             }
     }
 
-    override suspend fun getAlbums(): ArrayList<AlbumsItem>? = ioAsync {
+    override suspend fun getAlbums(): List<AlbumsItem>? = ioAsync {
         dataBase.getAlbums()
             ?.map { MainMapper().mapToModel(it) } as ArrayList?
     }

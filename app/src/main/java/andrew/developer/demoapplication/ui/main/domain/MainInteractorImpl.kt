@@ -1,6 +1,7 @@
 package andrew.developer.demoapplication.ui.main.domain
 
 import andrew.developer.demoapplication.domain.InteractorIml
+import andrew.developer.demoapplication.ui.main.data.MainRepository
 import javax.inject.Inject
 
 class MainInteractorImpl @Inject constructor(private val repository: MainRepository):

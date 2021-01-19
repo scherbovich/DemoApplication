@@ -6,6 +6,6 @@ import andrew.developer.demoapplication.domain.InteractorOut
 interface MainInteractorOut: InteractorOut {
 
     fun isLoading(loading: Boolean)
-    fun onLoaded(albums: ArrayList<AlbumsItem>)
+    fun onLoaded(albums: List<AlbumsItem>)
     fun onError(e: Throwable)
 }

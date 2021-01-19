@@ -4,10 +4,10 @@ import andrew.developer.demoapplication.api.Api
 import andrew.developer.demoapplication.di.FragmentScope
 import andrew.developer.demoapplication.storage.AppDatabase
 import andrew.developer.demoapplication.storage.dao.AlbumDao
+import andrew.developer.demoapplication.ui.main.data.MainRepository
 import andrew.developer.demoapplication.ui.main.data.MainRepositoryImpl
 import andrew.developer.demoapplication.ui.main.domain.MainInteractor
 import andrew.developer.demoapplication.ui.main.domain.MainInteractorImpl
-import andrew.developer.demoapplication.ui.main.domain.MainRepository
 import dagger.Module
 import dagger.Provides
 

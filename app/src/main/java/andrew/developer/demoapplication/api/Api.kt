@@ -7,10 +7,10 @@ import retrofit2.http.*
 interface Api {
 
     @GET("/albums")
-    suspend fun getAlbums(): ArrayList<AlbumsItem>
+    suspend fun getAlbums(): List<AlbumsItem>
 
     @GET("/albums")
-    suspend fun getSortedAlbums(@Query("userId") userId: Int): ArrayList<AlbumsItem>
+    suspend fun getSortedAlbums(@Query("userId") userId: Int): List<AlbumsItem>
 
     @GET("/albums/{id}")
     suspend fun getAlbum(@Path(value = "id") albumId: Int): AlbumsItem

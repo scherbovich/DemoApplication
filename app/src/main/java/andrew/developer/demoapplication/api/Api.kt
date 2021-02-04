@@ -8,13 +8,4 @@ interface Api {
 
     @GET("/albums")
     suspend fun getAlbums(): List<AlbumsItem>
-
-    @GET("/albums")
-    suspend fun getSortedAlbums(@Query("userId") userId: Int): List<AlbumsItem>
-
-    @GET("/albums/{id}")
-    suspend fun getAlbum(@Path(value = "id") albumId: Int): AlbumsItem
-
-    @POST("/albums")
-    suspend fun uploadAlbum(@Body album: AlbumsItem): Response<AlbumsItem>
 }
